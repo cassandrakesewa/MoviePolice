@@ -1,0 +1,774 @@
+/*===============================================================*/
+/*		Name: Wennus
+/*		Description: Responsive Coming Soon Page
+/*		Version: 1.0
+/*		Author: Esmet
+/*		
+/*		TABLE OF CONTENTS
+/*		-------------------------------
+/*		1 - Reset
+/*		2 - Basicy Body Styling
+/*		3 - Preloader
+/*		4 - Youtube Player
+/*		5 - Site Header
+/*		6 - Countdown
+/*		7 - Main Menu (Navigation)
+/*		8 - Page Footer
+/*		9 - Subscribe Form
+/*		10 - Contact Form
+/*		
+/*===============================================================*/
+/*===============================================================*/
+/*      1 - Reset
+/*===============================================================*/
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+main {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+html {
+  font-size: 100%;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
+
+a:focus {
+  outline: none;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+nav,
+section {
+  display: block;
+}
+
+audio,
+canvas,
+video {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+}
+
+audio:not([controls]) {
+  display: none;
+}
+
+sub,
+sup {
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sup {
+  top: -.5em;
+}
+
+sub {
+  bottom: -.25em;
+}
+
+img {
+  border: 0;
+  -ms-interpolation-mode: bicubic;
+}
+
+button,
+input,
+select,
+textarea {
+  font-size: 100%;
+  margin: 0;
+  vertical-align: baseline;
+  *vertical-align: middle;
+}
+
+button,
+input {
+  line-height: normal;
+  *overflow: visible;
+}
+
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  cursor: pointer;
+  -webkit-appearance: button;
+}
+
+input[type="search"] {
+  -webkit-appearance: textfield;
+}
+
+input[type="search"]:-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+textarea {
+  overflow: auto;
+  vertical-align: top;
+}
+
+/*===============================================================*/
+/*       2 - Basicy Body Styling
+/*===============================================================*/
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: 93.75%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+@media screen and (min-width: 600px) {
+  html {
+    font-size: 100%;
+  }
+}
+
+*, *:before, *:after {
+  -webkit-box-sizing: inherit;
+  -moz-box-sizing: inherit;
+  box-sizing: inherit;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+  color: white;
+  font-size: 14px;
+  font-size: 0.875rem;
+  line-height: 1.85;
+  background: #161516;
+  text-rendering: optimizeLegibility;
+}
+
+a {
+  color: #28d2c0;
+  text-decoration: none !important;
+}
+a:hover {
+  color: white;
+}
+
+h1 {
+  font-size: 30px;
+  font-size: 1.875rem;
+}
+
+h2 {
+  font-size: 27px;
+  font-size: 1.6875rem;
+}
+
+h3 {
+  font-size: 23px;
+  font-size: 1.4375rem;
+}
+
+h4 {
+  font-size: 20px;
+  font-size: 1.25rem;
+}
+
+h5 {
+  font-size: 17px;
+  font-size: 1.0625rem;
+}
+
+h6 {
+  font-size: 14px;
+  font-size: 0.875rem;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Josefin Sans", sans-serif;
+  text-transform: uppercase;
+}
+
+::-webkit-input-placeholder {
+  color: #eee;
+}
+
+:-moz-placeholder {
+  color: #eee;
+  opacity: 1;
+}
+
+::-moz-placeholder {
+  color: #eee;
+  opacity: 1;
+}
+
+:-ms-input-placeholder {
+  color: #eee;
+}
+
+.container {
+  position: relative;
+  z-index: 8;
+}
+
+.bg-pattern {
+  background: url("../img/bg.png") repeat fixed;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 7;
+  width: 100%;
+  min-height: 100%;
+}
+
+.bg-overlay {
+  background: rgba(22, 21, 22, 0);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 6;
+  width: 100%;
+  min-height: 100%;
+}
+
+#bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 5;
+  width: 100%;
+  min-height: 100%;
+}
+
+#page-content {
+  position: relative;
+  z-index: 999;
+  width: 100%;
+}
+
+#bg-header {
+  background-image: url("../img/bg1.jpg");
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center center;
+  z-index: 7;
+}
+
+.content {
+  display: none;
+  margin-bottom: 80px;
+  margin-bottom: 5rem;
+}
+
+.movieform{
+  background: rgba(22, 21, 22, 0.50);
+  padding: 50px 50px 20px 50px;
+  padding:  3.125rem 3.125rem 1.25rem 3.125rem;
+  font-weight: 300;
+  font-size: 13px;
+  font-size: 0.8125rem;
+  margin-top: -50px;
+}
+
+.content .inner {
+  background: rgba(255, 255, 255, 0.15);
+  padding: 50px 50px 20px 50px;
+  padding:  3.125rem 3.125rem 1.25rem 3.125rem;
+  font-weight: 300;
+  font-size: 13px;
+  font-size: 0.8125rem;
+}
+@media screen and (max-width: 768px) {
+  .content .inner {
+    padding: 50px 30px 30px;
+    padding:  3.125rem 1.875rem 1.875rem;
+  }
+}
+
+.page-top {
+  margin-bottom: 50px;
+  margin-bottom: 3.125rem;
+}
+
+h2.page-title {
+  font-family: "Josefin Sans", sans-serif;
+  letter-spacing: 3px;
+  font-size: 24px;
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  margin-bottom: 1.25rem;
+}
+
+.movietisa .row{
+  margin-left: 0px;
+  margin-right: 0px;
+}
+
+/*===============================================================*/
+/*      3 - Preloader
+/*===============================================================*/
+.js-preloader
+.js-preloader {
+  opacity: 0;
+}
+
+.js-preloader.preloader-done
+.js-preloader.preloader-done {
+  opacity: 1;
+}
+
+#jpreOverlay {
+  background-color: white;
+  height: 100% !important;
+  position: fixed !important;
+}
+
+#jpreSlide {
+  width: 100%;
+  text-align: center;
+  top: auto !important;
+  bottom: 50%;
+}
+
+#jpreContent {
+  display: none;
+}
+
+#jpreLoader {
+  height: 8px;
+  width: 100%;
+}
+
+#jpreBar {
+  z-index: 2;
+  background-color: #161516;
+}
+
+#jprePercentage {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 18px;
+  font-family: "Josefin Sans", sans-serif;
+  letter-spacing: 2px;
+  font-weight: 700;
+  color: #161516;
+}
+
+/*===============================================================*/
+/*      4 - Youtube Player
+/*===============================================================*/
+.mbYTP_wrapper:after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-image: url("../img/bg.png");
+  background-repeat: repeat;
+  background-color: rgba(95, 96, 97, 0.4);
+  z-index: 100;
+}
+
+.mb_YTVPBar {
+  display: none !important;
+}
+
+#bgndVideo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 6;
+  width: 100%;
+  height: 100%;
+}
+
+.player-controls button {
+  background: none;
+  color: white;
+  width: 36px;
+  outline: 0 !important;
+  border: 1px solid #F8F8F8;
+  height: 36px;
+  line-height: 20px;
+  position: absolute;
+  z-index: 9999;
+  display: block;
+  text-align: center;
+  -webkit-border-radius: 18px;
+  border-radius: 18px;
+  background-clip: padding-box;
+  /* stops bg color from leaking outside the border: */
+  font-size: 10px;
+}
+.player-controls button.play {
+  top: 30px;
+  right: 75px;
+}
+.player-controls button.pause {
+  top: 30px;
+  right: 30px;
+}
+
+/*===============================================================*/
+/*		5 - Site Header
+/*===============================================================*/
+.site-brand {
+  margin: 80px 0;
+  margin:  3rem 0;
+}
+.site-brand img {
+  display: inline-block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 70px;
+  margin-top: -35px;
+  stroke: red;
+  fill: red;
+}
+
+.welcome-text {
+  color: white;
+  font-family: "Open Sans", sans-serif;
+}
+
+.text-rotator .text-item {
+  display: none;
+  width: 100%;
+  text-align: center;
+}
+.text-item h2 {
+  letter-spacing: 0px;
+  font-weight: 700;
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 21px !important;
+  font-size: 2.8125rem;
+}
+.text-rotator .text-item span {
+  color: #28d2c0;
+}
+
+.line-dec {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 40px;
+  margin-bottom: 30px;
+  width: 30px;
+  height: 3px;
+  display: block;
+  background: #28d2c0;
+}
+
+/*===============================================================*/
+/*		6 - Countdown
+/*===============================================================*/
+#countdown.container {
+  max-width: 600px;
+}
+
+.countdown {
+  text-align: center;
+  color: #28d2c0;
+  text-transform: uppercase;
+  font-size: 14px;
+  font-size: 0.875rem;
+  margin-top: 20px;
+  margin-top: 1.25rem;
+  margin-bottom: 40px;
+  margin-bottom: 2.5rem;
+  font-family: "Dosis", sans-serif;
+}
+.countdown span {
+  font-weight: 500;
+  color: white;
+  font-size: 72px;
+  font-size: 4.5rem;
+  letter-spacing: 6px;
+  display: block;
+  margin-bottom: -20px;
+}
+
+/*===============================================================*/
+/*		7 - Main Menu (Navigation)
+/*===============================================================*/
+.menu-container {
+  margin-top: 40px;
+  margin-top: 2.5rem;
+  margin-bottom: 40px;
+  margin-bottom: 2.5rem;
+}
+.menu-container li {
+  display: inline-block;
+  max-width: 180px;
+  width: 180px;
+}
+.menu-container li:first-child {
+  margin-left: 10px;
+}
+.menu-container li:hover .nav-line {
+  width: 99%;
+}
+@media screen and (max-width: 768px) {
+  .menu-container li {
+    width: 120px;
+    max-width: 120px;
+  }
+}
+.menu-container .show-menu {
+  display: none;
+}
+
+.menu-content {
+  margin-top: 20px;
+  margin-top: 1.25rem;
+}
+.menu-content a {
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-family: "Josefin Sans", sans-serif;
+  text-align: center;
+  display: inline-block;
+  position: relative;
+}
+
+a.click-menu {
+  width: 60px;
+  height: 60px;
+  line-height: 60px;
+  background: white;
+  text-align: center;
+  color: #161516;
+  -webkit-border-radius: 60px;
+  border-radius: 60px;
+  background-clip: padding-box;
+  /* stops bg color from leaking outside the border: */
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+
+a.close-icon {
+  width: 60px;
+  height: 60px;
+  line-height: 60px;
+  background: white;
+  text-align: center;
+  color: #161516;
+  -webkit-border-radius: 60px;
+  border-radius: 60px;
+  background-clip: padding-box;
+  /* stops bg color from leaking outside the border: */
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  position: relative;
+  margin-bottom: 50px;
+  margin-bottom: 3.125rem;
+}
+
+.nav-line {
+  -webkit-transition: all 300ms cubic-bezier(0.175, 0.885, 0.32, 1.275) 0;
+  -moz-transition: all 300ms cubic-bezier(0.175, 0.885, 0.32, 1.275) 0s;
+  -o-transition: all 300ms cubic-bezier(0.175, 0.885, 0.32, 1.275) 0;
+  transition: all 300ms cubic-bezier(0.175, 0.885, 0.32, 1.275) 0;
+  overflow: hidden;
+  position: absolute;
+  pointer-events: none;
+  left: 1px;
+  bottom: -5px;
+  display: block;
+  width: 0;
+  height: 1px !important;
+  max-height: 1px !important;
+  background: #fff;
+}
+
+/*===============================================================*/
+/*		8 - Page Footer
+/*===============================================================*/
+.page-bottom {
+  margin-top: 60px;
+  margin-top: 3.75rem;
+}
+
+.social-media li {
+  display: inline-block;
+  margin: 5px;
+}
+.social-media a {
+  width: 32px;
+  height: 32px;
+  line-height: 32px;
+  display: inline-block;
+  border: 1px solid white;
+  color: white;
+  -webkit-border-radius: 32px;
+  border-radius: 32px;
+  background-clip: padding-box;
+  /* stops bg color from leaking outside the border: */
+}
+
+.copyright {
+  font-size: 11px;
+  font-size: 0.6875rem;
+  margin-top: 15px;
+  margin-top: 0.9375rem;
+}
+
+/*===============================================================*/
+/*		9 - Subscribe Form
+/*===============================================================*/
+#subscribe-form {
+  width: 94%;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.subscribe-email {
+  word-spacing: 1px;
+  padding: 0 15px;
+  height: 50px;
+  width: 48%;
+  outline: none;
+  background-color: rgba(255, 255, 255, 0.2);
+  border: solid 2px rgba(255, 255, 255, 0.5);
+  color: white;
+  display: inline-block;
+  vertical-align: top;
+}
+@media screen and (max-width: 768px) {
+  .subscribe-email {
+    width: 100%;
+    margin-bottom: 20px;
+    margin-bottom: 1.25rem;
+  }
+}
+
+.subscribe-alert {
+  display: block;
+}
+
+.subscribe .signup-button,
+.contact-button {
+  height: 40px;
+  width: 40%;
+  padding: 0 15px;
+  background-color: #28d2c0;
+  outline: none;
+  border: none;
+  text-transform: uppercase;
+  font-family: "Josefin Sans", sans-serif;
+  font-weight: 700;
+  letter-spacing: 2px;
+  display: inline-block;
+  vertical-align: top;
+}
+@media screen and (max-width: 768px) {
+  .subscribe .signup-button,
+  .contact-button {
+    width: 100%;
+    display: block;
+  }
+}
+
+/*===============================================================*/
+/*		10 - Contact Form
+/*===============================================================*/
+#success, #error {
+  display: none;
+}
+
+.output_message {
+  display: block;
+  margin-top: 20px;
+  font-weight: 700;
+}
+
+.contact-input {
+  word-spacing: 1px;
+  padding: 0 15px;
+  height: 35px;
+  width: 100%;
+  outline: none;
+  background-color: rgba(255, 255, 255, 0.2);
+  border: solid 2px rgba(255, 255, 255, 0.5);
+  color: white;
+  display: inline-block;
+  vertical-align: top;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 20px;
+  margin-bottom: 1.25rem;
+}
+.contact-input.message-box {
+  max-width: 60%;
+  height: 110px;
+  max-height: 110px;
+  padding: 10px 15px;
+}
+@media screen and (max-width: 768px) {
+  .contact-input {
+    width: 100%;
+  }
+  .contact-input.message-box {
+    width: 100%;
+    max-width: 100%;
+  }
+}

@@ -1,0 +1,126 @@
+<template name="index">
+
+
+  <div class="bg-pattern"></div>
+  <div class="bg-overlay"></div>
+  <div id="bg"></div>
+
+  <div id="bgndVideo" class="video-player" 
+  data-property="{videoURL:'https://www.youtube.com/watch?v=Skpu5HaVkOc&t=0m06s',containment:'#bg',autoPlay:true, showControls:false, mute:false, startAt:0006, opacity:1, showYTLogo:false, vol:25}">
+</div>
+
+<div class="player-controls">
+  <button class="play" onclick="$('#bgndVideo').playYTP()"><i class="fa fa-play"></i></button>
+  <button class="pause" onclick="$('#bgndVideo').pauseYTP()"><i class="fa fa-pause"></i></button>
+</div>
+
+<div id="page-content">
+  <div class="container">
+    <div class="row text-center">
+      <div class="col-lg-8 col-lg-offset-2">
+        <div class="site-brand">
+          <a href="index.html"><img src="img/logo1.png" alt="Movie Police"></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FRONT PAGE -->
+  <div id="menu-1" class="homepage">
+<!-- <div class="movietisa">
+<div class="row text-center">
+<div class="col-lg-3 col-lg-offset-9 welcome-text">
+<div class="">
+<div class="text-item"><h2>Watch it While Its HOT</h2></div>
+</div>
+<span class="line-dec"></span>
+<p>If you have something new you’re looking to launch, you’re going to want to start building a community of people interested in what you’re launching.</p>
+</div>
+</div>
+</div> -->
+
+<!-- <div id="countdown" class="container"></div> -->
+
+<div class="menu-container">
+  <div class="text-center">
+    <div class="col-lg-3 col-lg-offset-9 movieform">
+      <div class="row text-center">
+        <div class="welcome-text">
+          <div class="">
+            <div class="text-item"><h2>Watch it While Its HOT</h2></div>
+          </div>
+          <span class="line-dec"></span>
+          <p>If you have something new you’re looking to launch, you’re going to want to start building a community of people interested in what you’re launching.</p>
+        </div>
+      </div>
+      {{> userform}}
+    </div>
+  </div>
+</div>
+</div> <!-- #menu-1 -->
+
+<!-- CONTACT PAGE -->
+<div id="menu-3" class="content contact-section">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 text-center">
+        <div class="main-menu">
+          <a href="#" class="show-1 homebutton close-icon"><i class="fa fa-times"></i></a>
+        </div>
+        <div class="inner">
+          <div class="row">
+            <div class="page-top col-lg-12">
+              <h2 class="page-title">Feel free to talk us</h2>
+              <p>Iste neque facilis aliquid eum explicabo beatae adipisci natus mollitia dolores culpa quasi hic pariatur voluptas dicta enim, et dolor deserunt minus!</p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-12 contact">
+              <form id="ajax-contact" method="post" action="contact.php">
+                <input class="contact-input" type="text" id="name" name="name" placeholder="Name">
+                <input class="contact-input" type="email" id="email" name="email" placeholder="Email">
+                <textarea class="contact-input message-box" id="message" name="message" placeholder="Message"></textarea>
+                <input type="submit" class="contact-button" id="contact-button" value="Send">
+                <span class="output_message"></span>
+              </form>
+            </div>
+          </div>
+          <div class="row">
+            <div class="page-bottom col-lg-12">
+              <div class="social-media">
+                <ul>
+                  <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                  <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                  <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                  <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                </ul>
+              </div>
+              <div class="copyright">
+                <p>Created with <i class="fa fa-heart-o"></i> by Esmet &amp; Robert<br>&copy; 2015. All Right Reserved.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> <!-- #menu-3 -->
+
+</div>
+
+<!-- <script src="/js/jquery-1.11.2.min.js"></script>
+<script src="/js/jquery-migrate-1.2.1.min.js"></script>
+<script src="/js/jquery.validate.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/html5shiv.js"></script>
+<script src="/js/jquery.countdown.js"></script>
+<script src="/js/jquery.cycle.min.js"></script>
+<script src="/js/jquery.backstretch.min.js"></script>
+<script src="/js/jquery.smoothscroll.js"></script>
+<script src="/js/jquery.ajaxchimp.js"></script>
+<script src="/js/jpreloader.min.js"></script>
+<script src="/js/jquery.mb.YTPlayer.js"></script>
+<script src="js/plugins.js"></script>
+<script src="/js/script.js"></script> -->
+
+</template>

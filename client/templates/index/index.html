@@ -1,13 +1,14 @@
 <template name="index">
-
-
-  <div class="bg-pattern"></div>
-  <div class="bg-overlay"></div>
-  <div id="bg"></div>
-
   <div id="bgndVideo" class="video-player" 
-  data-property="{videoURL:'https://www.youtube.com/watch?v=Skpu5HaVkOc&t=0m06s',containment:'#bg',autoPlay:true, showControls:false, mute:false, startAt:0006, opacity:1, showYTLogo:false, vol:25}">
+  data-property="{videoURL:'https://www.youtube.com/watch?v=Skpu5HaVkOc&t=0m06s',containment:'body',autoPlay:true, showControls:false, mute:false, startAt:0006, opacity:1, showYTLogo:false, vol:25}">
 </div>
+
+<div class="bg-pattern"></div>
+<div class="bg-overlay"></div>
+<div id="bg"></div>
+
+
+
 
 <div class="player-controls">
   <button class="play" onclick="$('#bgndVideo').playYTP()"><i class="fa fa-play"></i></button>
@@ -53,6 +54,7 @@
           <p>If you have something new you’re looking to launch, you’re going to want to start building a community of people interested in what you’re launching.</p>
         </div>
       </div>
+
       {{> userform}}
     </div>
   </div>

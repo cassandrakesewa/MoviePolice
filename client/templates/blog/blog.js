@@ -4,3 +4,12 @@ if (Meteor.isServer) {
     authorRole: 'blogAuthor'
   });
 }
+
+if (Meteor.isClient) {
+  Blog.config({
+    comments: {
+      useSideComments: true,
+      allowAnonymous: true
+    }
+  });
+}

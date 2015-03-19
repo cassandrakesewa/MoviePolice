@@ -124,5 +124,24 @@
 <script src="/js/jquery.mb.YTPlayer.js"></script>
 <script src="js/plugins.js"></script>
 <script src="/js/script.js"></script> -->
+{{> successModal}}
+</template>
 
+<template name="successModal">
+  <div class="modal fade" id="success-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="myModalLabel">Successful</h4>
+        </div>
+        <div class="modal-body">
+          <p>Sucessful Login. You are Awesome</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
 </template>

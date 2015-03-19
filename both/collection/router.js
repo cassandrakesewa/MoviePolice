@@ -5,9 +5,9 @@ Router.route('/', function(){
 
 });
 
-Router.route('/visitorForm/:_id', function(){
-  this.render('visitorForm');
-}, {
-  name: 'visitorForm'
+// Router.route('/visitorForm/:_id', function(){
+//   this.render('visitorForm');
+// }, {
+//   name: 'visitorForm'
 
-});
+// });

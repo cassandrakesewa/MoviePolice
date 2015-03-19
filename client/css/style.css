@@ -53,6 +53,10 @@ blockquote:after {
   content: none;
 }
 
+.modal{
+  color: #000;
+}
+
 table {
   border-collapse: collapse;
   border-spacing: 0;
